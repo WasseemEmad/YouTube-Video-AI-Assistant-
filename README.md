@@ -11,9 +11,9 @@ This project is an AI-powered assistant that extracts YouTube video transcripts,
 3. **Answering Questions:**
 Users can ask questions about the video content.
 
-the answer is found in the transcript, the system retrieves it.
+    the answer is found in the transcript, the system retrieves it.
 
-If not, the AI-powered search agent queries the web for additional information.
+    If not, the AI-powered search agent queries the web for additional information.
                             
 5. **Agents and LangChain:** The application utilizes LangChain's initialize_agent function to create an intelligent agent that decides when to rely on the transcript and when to search the web using DuckDuckGo.
 
