@@ -16,8 +16,7 @@ class VideoQARequest(BaseModel):
     link: str
     question: str
     
-    
-#llm_summarization = LLM_model(MODEL_ID, temperature=0.5)
+
 llm_questions = LLM_model(MODEL2_ID, temperature=0.5)
 agent = initialize_search_agent(llm_questions)
 
@@ -27,7 +26,7 @@ async def chatbot_response(data: Video_link):
         transcript = youtube_extract.get_youtube_transcript(data.link)
         summary = Summarize(llm_questions,transcript)
         cleaned_summary = clean_summary(summary)
-        print("✅ SUMMARY RESPONSE:", repr(cleaned_summary))  # Debugging
+        print("✅ SUMMARY RESPONSE:", repr(cleaned_summary))
         
         return {"summary": cleaned_summary}
     except Exception as e:
